@@ -227,8 +227,11 @@ public class FirebasePlugin extends CordovaPlugin {
                 bundle.putString(key, value.toString());
             }
         }
-
-        cordova.getThreadPool().execute(new Runnable() {
+        
+        mFirebaseAnalytics.logEvent(name, bundle);
+        callbackContext.success();
+        
+        /*cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
                     mFirebaseAnalytics.logEvent(name, bundle);
@@ -237,7 +240,7 @@ public class FirebasePlugin extends CordovaPlugin {
                     callbackContext.error(e.getMessage());
                 }
             }
-        });
+        }); */
     }
 
     private void setUserId(final CallbackContext callbackContext, final String id) {
