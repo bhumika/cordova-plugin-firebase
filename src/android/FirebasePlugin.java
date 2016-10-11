@@ -228,19 +228,21 @@ public class FirebasePlugin extends CordovaPlugin {
             }
         }
         
-        mFirebaseAnalytics.logEvent(name, bundle);
-        callbackContext.success();
+        //mFirebaseAnalytics.logEvent(name, bundle);
+        //callbackContext.success();
         
-        /*cordova.getThreadPool().execute(new Runnable() {
+        cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
+                    Log.e(TAG,"mFirebaseAnalytics.logEvent calling");
                     mFirebaseAnalytics.logEvent(name, bundle);
                     callbackContext.success();
                 } catch (Exception e) {
+                    Log.e(TAG,"mFirebaseAnalytics.logEvent Exception");
                     callbackContext.error(e.getMessage());
                 }
             }
-        }); */
+        }); 
     }
 
     private void setUserId(final CallbackContext callbackContext, final String id) {
