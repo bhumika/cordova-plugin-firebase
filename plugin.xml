@@ -53,8 +53,10 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 		<framework src="com.google.firebase:firebase-core:+" />
 		<framework src="com.google.firebase:firebase-messaging:+" />
+		<framework src="com.google.firebase:firebase-invites:+" />
 		<framework src="com.google.firebase:firebase-crash:+" />
 		<framework src="com.google.firebase:firebase-config:+" />
+		
 	</platform>
 
 	<platform name="ios">
