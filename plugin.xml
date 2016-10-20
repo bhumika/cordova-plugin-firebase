@@ -40,9 +40,19 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 			<service android:name="org.apache.cordova.firebase.FirebasePluginInstanceIDService">
 				<intent-filter>
 					<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+					<action android:name="android.intent.action.VIEW"/>
+    					<category android:name="android.intent.category.DEFAULT"/>
+					<category android:name="android.intent.category.BROWSABLE"/>
+					<data android:host="bhumikapatel.in" android:scheme="http"/>
+				    	<data android:host="bhumikapatel.in" android:scheme="https"/>
+
 				</intent-filter>
 			</service>
 			<receiver android:name="org.apache.cordova.firebase.OnNotificationOpenReceiver"></receiver>
+			
+
+
+			
 		</config-file>
 		<source-file src="src/android/google-services.json" target-dir="." />
 		<source-file src="src/android/FirebasePlugin.java" target-dir="src/org/apache/cordova/firebase" />
